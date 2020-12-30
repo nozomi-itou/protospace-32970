@@ -2,29 +2,30 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| email      | string | null: false |
+| password   | string | null: false |
+| name       | text   | null: false |
+| profile    | text   | null: false |
+| occupation | text   | null: false |
 
-## rooms テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
 
-## room_users テーブル
+## comments テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| text      | text       | null: false, foreign_key: true |
+| user      | references |                                |
+| prototype | references |                                |
 
-## messages テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+## prototypes テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| title      | string     | null: false, foreign_key: true |
+| catch_copy | text       | null: false, foreign_key: true |
+| concept    | text       | null: false, foreign_key: true |
+| user       | references |                                |
